@@ -17,11 +17,9 @@
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
-                 background-image:url(https://assets-v2.lottiefiles.com/a/639784ea-1171-11ee-aea8-735bf223615c/IyZGK6hpdA.gif);
-background-size:contain;
-
-
-
+background-image:url(https://www.scuolamediadestefano.edu.it/wp-content/uploads/2019/12/buon-natale-gif-animate-7.gif);
+background-size:cover;
+color:red;
             }
 
 
@@ -29,8 +27,8 @@ background-size:contain;
     </head>
     <body>
     <main class="text-center">
-        <h1>Hello Wordl !</h1>
-            <a href="{{ route ('laravel') }}">Laravel</a>
+        <h1>Hello World !</h1>
+            <a href="{{ route ('movies') }}">Movies</a>
 
 
     </main>

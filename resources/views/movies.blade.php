@@ -15,27 +15,54 @@
         </style>
 
         <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-img{
-width:100%;
+body {
+            font-family: 'Nunito', sans-serif;
+            padding: 40px;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            flex: 0 0 calc(25% - 20px);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+a{
+margin  :30px;
 }
         </style>
     </head>
-    <main class="text-center">
+<body>
+    <main class="container">
+        <h1 class="text-center">Movies</h1>
 
-        <h1>Laravel</h1>
-
-                 <div class="card" style="width: 21rem;">
-                    <img src="{{ $image }}" class="card-img-top" alt="...">
+<section>
+            @foreach($data as $movie)
+                <div class="card">
+                    <img src="{{ $movie['poster_path'] }}" alt="{{ $movie['title'] }}">
                     <div class="card-body">
-                        <h5 class="card-title">{{ $title }}</h5>
-                        <p class="card-text">{{ $text }}</p>
+                        <h3 class="card-title">{{ $movie['title'] }}</h3>
+                        <p class="card-text"><strong>Overview:</strong> {{ $movie['overview'] }}</p>
+                        <p class="card-text"><strong>Release Date:</strong> {{ $movie['release_date'] }}</p>
                     </div>
-                 </div>
-
+                </div>
+            @endforeach
+        </section>
 
     </main>
-    </body>
+</body>
 </html>
